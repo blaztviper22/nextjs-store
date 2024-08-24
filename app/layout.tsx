@@ -31,4 +31,4 @@ export default function RootLayout({
   );
 }
 
-// stop reading in theme
+// stop reading in Prisma Crud
