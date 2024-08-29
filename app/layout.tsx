@@ -31,4 +31,4 @@ export default function RootLayout({
   );
 }
 
-// stop reading in Prisma Crud
+// stop reading in Products Container Component
