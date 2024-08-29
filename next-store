@@ -1,0 +1,10 @@
+[33mc2c126c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD
+[33mc2c126c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{1}: reset: moving to HEAD
+[33mc2c126c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{2}: reset: moving to HEAD
+[33mc2c126c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{3}: commit: new commits
+[33m97529d8[m HEAD@{4}: Branch: renamed refs/heads/master to refs/heads/main
+[33m97529d8[m HEAD@{6}: commit: new commits
+[33mdd13345[m HEAD@{7}: commit: new commits
+[33md2ed238[m HEAD@{8}: commit: new commits
+[33m9713299[m HEAD@{9}: commit: new commits
+[33ma016c68[m HEAD@{10}: commit (initial): Initial commit from Create Next App
