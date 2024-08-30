@@ -31,4 +31,4 @@ export default function RootLayout({
   );
 }
 
-// stop reading in Products Container Component
+// stop reading in Products Single Product

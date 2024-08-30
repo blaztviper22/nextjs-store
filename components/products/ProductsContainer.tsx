@@ -13,7 +13,7 @@ async function ProductsContainer({
   layout: string;
   search: string;
 }) {
-  const products = await fetchAllProducts();
+  const products = await fetchAllProducts({ search });
   const totalProducts = products.length;
   const searchTerm = search ? `&search=${search}` : '';
   return (
@@ -50,7 +50,7 @@ async function ProductsContainer({
       {/* PRODUCTS */}
       <div>
         {totalProducts === 0 ? (
-          <h5>
+          <h5 className="text-xl mt-16">
             Sorry, no products matched your search...
           </h5>
         ) : layout === 'grid' ? (

@@ -13,7 +13,7 @@ function ProductList({ products }: { products: Product[] }) {
         const dollarsAmount = formatCurrency(price);
         const productId = product.id;
         return (
-          <article key={productId}>
+          <article key={productId} className="group relative">
             <Link href={`/products/${productId}`}>
               <Card className="transform group-hover:shadow-xl transition-shadow duration-500">
                 <CardContent className="p-8 gap-y-4 grid md:grid-cols-3">
@@ -24,7 +24,7 @@ function ProductList({ products }: { products: Product[] }) {
                       fill
                       sizes="(max-width:768px) 100vw,(max-width:1200px) 50vw,30vw"
                       priority
-                      className="w-full rounded-md object-cover"
+                      className="w-full rounded object-cover"
                     />
                   </div>
 
