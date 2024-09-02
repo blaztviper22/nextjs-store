@@ -34,4 +34,4 @@ export default function RootLayout({
   );
 }
 
-// stop reading in Products Single Product
+// stop reading in Admin links
