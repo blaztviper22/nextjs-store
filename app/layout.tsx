@@ -34,4 +34,4 @@ export default function RootLayout({
   );
 }
 
-// stop reading in Admin links
+// stop reading in Faker Library
