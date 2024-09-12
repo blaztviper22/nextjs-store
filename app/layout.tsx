@@ -34,4 +34,4 @@ export default function RootLayout({
   );
 }
 
-// stop reading in Faker Library
+// stop reading in Favorite Model
