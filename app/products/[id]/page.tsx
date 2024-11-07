@@ -2,14 +2,22 @@ import FavoriteToggleButton from "@/components/products/FavoriteToggleButton";
 import AddtoCart from "@/components/single-product/AddtoCart";
 import BreadCrumbs from "@/components/single-product/BreadCrumbs"
 import ProductRating from "@/components/single-product/ProductRating";
-import { fetchSingleProduct } from "@/utils/actions"
+import ShareButton from "@/components/single-product/ShareButton";
+import { fetchSingleProduct, findExistingReview } from "@/utils/actions"
 import { formatCurrency } from "@/utils/format";
 import Image from "next/image";
+import SubmitReview from '@/components/reviews/SubmitReview';
+import ProductReviews from '@/components/reviews/ProductReviews';
+import {auth} from '@clerk/nextjs/server';
 
 async function SingleProductpage({ params }: { params: { id: string }}) {
   const product = await fetchSingleProduct(params.id);
   const { name, image, company, price, description } = product;
   const dollarsAmount = formatCurrency(price);
+  const {userId} = auth();
+  const reviewDoesNotExist = 
+    userId && !(await findExistingReview(userId,product.id));
+
   return (
     <section>
       <BreadCrumbs name={product.name} />
@@ -30,6 +38,7 @@ async function SingleProductpage({ params }: { params: { id: string }}) {
           <div className="flex gap-x-8 items-center">
             <h1 className="capitalize text-3xl font-bold">{name}</h1>
             <FavoriteToggleButton productId={params.id} />
+            <ShareButton name={product.name} productId={params.id} />
           </div>
           <ProductRating productId={params.id} />
           <h4 className="text-xl mt-2">{company}</h4>
@@ -40,6 +49,9 @@ async function SingleProductpage({ params }: { params: { id: string }}) {
           <AddtoCart productId={params.id} />
         </div>
       </div>
+      <ProductReviews productId={params.id} />
+      
+      { reviewDoesNotExist && <SubmitReview productId={params.id} /> }
     </section>
   )
 }

@@ -34,4 +34,4 @@ export default function RootLayout({
   );
 }
 
-// stop reading in Favorite Model
+// stop reading in Reviews page
